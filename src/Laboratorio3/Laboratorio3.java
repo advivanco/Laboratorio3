@@ -21,12 +21,12 @@ public class Laboratorio3 {
         do {
             System.out.println("\n=== SISTEMA DE REGISTRO DE MULTAS ===");
             System.out.println("1. Registrar datos del propietario");
-            System.out.println("2. Registrar datos del vehículo");
+            System.out.println("2. Registrar datos del vehiculo");
             System.out.println("3. Registrar infracciones");
             System.out.println("4. Ver infracciones");
             System.out.println("5. Ver datos generales");
             System.out.println("6. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = sc.nextInt();
             sc.nextLine();
 
@@ -57,7 +57,7 @@ public class Laboratorio3 {
                     String color = sc.nextLine();
                     Automovil auto = new Automovil(placa, marca, modelo, color);
                     propietario.agregarAutomovil(auto);
-                    System.out.println("Vehículo registrado exitosamente.");
+                    System.out.println("Vehiculo registrado exitosamente.");
                     break;
 
                 case 3:
@@ -65,7 +65,7 @@ public class Laboratorio3 {
                         System.out.println("No hay vehículos registrados para agregar infracciones.");
                         break;
                     }
-                    System.out.print("Ingrese la placa del vehículo a multar: ");
+                    System.out.print("Ingrese la placa del vehiculo a multar: ");
                     String placaBuscar = sc.nextLine();
                     Automovil autoEncontrado = null;
                     for (Automovil a : propietario.getAutomoviles()) {
@@ -75,12 +75,12 @@ public class Laboratorio3 {
                         }
                     }
                     if (autoEncontrado != null) {
-                        System.out.print("Lugar de la infracción: ");
+                        System.out.print("Lugar de la infraccion: ");
                         String lugar = sc.nextLine();
                         autoEncontrado.agregarInfraccion(lugar);
-                        System.out.println("Infracción registrada exitosamente.");
+                        System.out.println("Infraccion registrada exitosamente.");
                     } else {
-                        System.out.println("Vehículo no encontrado.");
+                        System.out.println("Vehiculo no encontrado.");
                     }
                     break;
 
@@ -91,7 +91,7 @@ public class Laboratorio3 {
                     }
                     System.out.println("\n--- LISTADO DE INFRACCIONES ---");
                     for (Automovil a : propietario.getAutomoviles()) {
-                        System.out.println("Vehículo Placa: " + a.getPlaca());
+                        System.out.println("Vehiculo Placa: " + a.getPlaca());
                         if (a.getInfracciones().isEmpty()) {
                             System.out.println("  Sin infracciones.");
                         } else {
@@ -120,7 +120,7 @@ public class Laboratorio3 {
                     break;
 
                 default:
-                    System.out.println("Opción inválida, intente de nuevo.");
+                    System.out.println("Opcion inválida, intente de nuevo.");
             }
         } while (opcion != 6);
 
